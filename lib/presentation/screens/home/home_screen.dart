@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:widgets_app/config/menu/menu_items.dart';
+import 'package:widgets_app/presentation/screens/buttons/buttons_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -54,7 +55,14 @@ class CustomListTitle extends StatelessWidget {
       title: Text(menuItem.title),
       subtitle: Text(menuItem.subtitle),
       onTap: () {
-        print("Culo");
+        // Push: crea un stack de tarjetas, una pantalla encima de la otra, con la que se puede ejecutar un back
+        // Replace: remplaza una tarjeta por la otra, destruye la ruta anterior
+        //Navigator.of(context).push(
+        //  MaterialPageRoute(
+        //    builder: (context) => const ButtonsScreen()
+        //  )
+        //);
+        Navigator.pushNamed(context, menuItem.link);
       },
     );
   }
